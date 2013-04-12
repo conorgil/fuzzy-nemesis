@@ -8,6 +8,7 @@ import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 public class PublishMessageActivity extends Activity {
 
@@ -17,6 +18,9 @@ public class PublishMessageActivity extends Activity {
 		setContentView(R.layout.activity_publish_message);
 		// Show the Up button in the action bar.
 		setupActionBar();
+		
+		TextView txtView = (TextView) findViewById(R.id.txtView_showMessage);
+		txtView.setText(getIntent().getStringExtra(MainActivity.EXTRA_MESSAGE));
 	}
 
 	/**

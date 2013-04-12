@@ -10,6 +10,7 @@
 	tools:context=".PublishMessageActivity" >
 
 	<TextView
+		android:id="@+id/txtView_showMessage"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:text="@string/txtView_showMessage_text" />
