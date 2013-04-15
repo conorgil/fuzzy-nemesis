@@ -12,14 +12,12 @@
 	<TextView
 		android:id="@+id/txtView_showMessage"
 		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="@string/txtView_showMessage_text" />
+		android:layout_height="wrap_content"/>
 
 	<Button
 		android:id="@+id/btn_goBack"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:onClick="btn_goBack_onClick"
-		android:text="@string/btn_goBack_text" />
+		android:onClick="btn_goBack_onClick" />
 
 </LinearLayout>
