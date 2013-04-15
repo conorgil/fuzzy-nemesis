@@ -70,49 +70,4 @@ public class MainActivity extends Activity {
 		addEmailBox.getText();
 
 	}
-
-	// Functions just for random curiosity/debug/exploration
-	@Override
-	public void onPause() {
-		super.onPause();
-		System.out.println("MainActivity pause");
-	}
-
-	@Override
-	public void onStart() {
-		super.onStart();
-		System.out.println("MainActivity start");
-	}
-
-	@Override
-	public void onResume() {
-		super.onResume();
-		System.out.println("MainActivity resume");
-	}
-
-	@Override
-	public void onStop() {
-		super.onStop();
-		System.out.println("MainActivity stop");
-	}
-
-	@Override
-	public void onRestart() {
-		super.onRestart();
-		System.out.println("MainActivity restart");
-	}
-
-	@Override
-	public void onDestroy() {
-		super.onDestroy();
-		System.out.println("MainActivity destroy");
-	}
-
-	// public void btn_sendMessage_onClick(View view) {
-	// System.out.println("clicked the button!");
-	// Intent intent = new Intent(this, PublishMessageActivity.class);
-	// EditText editText = (EditText) findViewById(R.id.edit_message);
-	// intent.putExtra(EXTRA_MESSAGE, editText.getText().toString());
-	// startActivity(intent);
-	// }
 }
