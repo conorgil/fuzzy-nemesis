@@ -1,9 +1,12 @@
 package com.example.foobar;
 
+import java.util.List;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.foobar.mail.AsyncEmailSender;
 
@@ -11,6 +14,14 @@ public class SmsReceiver extends BroadcastReceiver {
 	private static final String LOG_TAG = "SMSApp";
 
 	private static final String ACTION = "android.provider.Telephony.SMS_RECEIVED";
+
+	private final MainActivity startingActivity;
+	private final List<String> emails;
+
+	public SmsReceiver(MainActivity startingActivity, List<String> emails) {
+		this.startingActivity = startingActivity;
+		this.emails = emails;
+	}
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
@@ -32,7 +43,17 @@ public class SmsReceiver extends BroadcastReceiver {
 			System.out.println("received text: " + buf);
 
 			// TODO load emails from file (user populates on another screen)
-			new AsyncEmailSender().execute("conorgilsenan@gmail.com");
+			// TODO best practice to use Async here or just GMailSender
+			// directly?
+			// TODO retrieve the content of the text message and include it in
+			// the email
+			if (emails.size() == 0) {
+				Toast.makeText(startingActivity, "No emails registered",
+						Toast.LENGTH_SHORT).show();
+			}
+			for (String toAddress : emails) {
+				new AsyncEmailSender().execute(toAddress);
+			}
 		}
 	}
 }
